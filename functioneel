@@ -24,13 +24,12 @@ document.onclick = function(event) {
 		tmpGetal = "";
 		resOperator.push(event.target.value);
 		scherm.innerText = event.target.value;
-		//function(uitrekenen);
 	}
 	else if (event.target.className == 'clear') {
 		clear()
 		scherm.innerText = tmpGetal;	
 		}
-	else if (event.target.className == 'calculate') {
+	else if ((event.target.className == 'calculate') && (resDecimal.length == 1) && (tmpGetal.length > 0)) {
 		resDecimal.push(tmpGetal);
 		scherm.innerText = uitrekenen(resDecimal[0], resDecimal[1], resOperator[0]);
 		clear();
@@ -60,7 +59,7 @@ function uitrekenen(getal1, getal2, operator) {
 			return(parseFloat(getal1) / parseFloat(getal2))
 		};
 	}
-	else if (operator == "X") {
+	else if (operator == "x") {
 		return(parseFloat(getal1) * parseFloat(getal2))
 	};
 }
