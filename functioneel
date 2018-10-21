@@ -19,15 +19,26 @@ document.onclick = function(event) {
 		scherm.innerText = tmpGetal;
 
 	}
-	else if (event.target.className == 'operator' && resOperator.length == 0) {
+	else if (event.target.className == 'operator') {
 		resDecimal.push(tmpGetal);
 		tmpGetal = "";
 		resOperator.push(event.target.value);
-		scherm.innerText = event.target.value;
+		scherm.innerText += event.target.value;
+		if (resDecimal.length == 2) {
+			resDecimal = [(uitrekenen(resDecimal[0], resDecimal[1], resOperator[0]))];
+			scherm.innerText = resDecimal;
+			resOperator.shift()
+		}
+
 	}
+	else if (event.target.className == "root") {
+		resDecimal.push(tmpGetal);
+		//tmpGetal = "";
+		resOperator.push("2");
+		}
 	else if (event.target.className == 'clear') {
 		clear()
-		scherm.innerText = tmpGetal;	
+		scherm.innerText = tmpGetal;
 		}
 	else if ((event.target.className == 'calculate') && (resDecimal.length == 1) && (tmpGetal.length > 0)) {
 		resDecimal.push(tmpGetal);
@@ -40,7 +51,7 @@ function clear(){
 		resDecimal = [];
 		resOperator = [];
 	}
-		
+
 function uitrekenen(getal1, getal2, operator) {
 	console.log(getal1);
 	console.log(operator);
@@ -51,16 +62,19 @@ function uitrekenen(getal1, getal2, operator) {
 	else if (operator == "-") {
 		return(parseFloat(getal1) - parseFloat(getal2))
 	}
-	else if (operator == "/") {
+	else if (operator == "/" ) {
 		if (parseFloat(getal2) == 0) {
 			return("ERROR")
 		}
 		else {
 			return(parseFloat(getal1) / parseFloat(getal2))
-		};
+		}
 	}
 	else if (operator == "x") {
 		return(parseFloat(getal1) * parseFloat(getal2))
+	}
+	else if (operator == "2") {
+		return(parseFloat(getal1) * (parseFloat(getal1)))
 	};
 }
 
