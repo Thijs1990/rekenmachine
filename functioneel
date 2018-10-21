@@ -31,7 +31,7 @@ document.onclick = function(event) {
 		}
 
 	}
-	else if (event.target.className == "root") {
+	else if (event.target.className == "square") {
 		resDecimal.push(tmpGetal);
 		//tmpGetal = "";
 		resOperator.push("2");
