@@ -21,11 +21,10 @@ div.scherm {
 	font-size: 1.3em;
 }
 button { width: 50px; height: 30px; box-shadow: 2px 1px 3px #50464680; border-radius: 10px; font-weight: bold;}
-button.clear, button.calculate { width: 104px; }
+button.calculate { width: 104px; }
 button.number { background-color: #b6cfe680; }
-button.operator { background-color: #5350504d; }
+button.operator, button.power-of, button.square { background-color: #5350504d; }
 button.decimal { background-color: #535050b3; }
 button.clear { background-color: #ff3636b3; }
 button.calculate { background-color: #45ab45cc; }
-button.square { background-color: #5350504d; }
-button.square p { margin: 0; font-size: 0.8em; }
+button.square p, button.power-of { margin: 0; font-size: 0.8em; }
