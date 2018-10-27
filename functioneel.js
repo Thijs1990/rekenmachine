@@ -34,7 +34,7 @@ Dit zorgt ervoor dat ik geen 2 operators in een string kan invoeren en dat ik ni
 	else if ((event.target.className == "square") && (tmpGetal.length > 0) && (resOperator.length == 0) && (tmpGetal.slice(-1) != ".")) {
         resDecimal.push(tmpGetal);
 	    resOperator.push("2");
-        scherm.innerText += resOperator[0].sup();//is er een manier om dit mooi te laten werken met superscript?
+        scherm.innerHTML += resOperator[0].sup();//is er een manier om dit mooi te laten werken met superscript?
     }
 //AC knop activeert de clear functie
 	else if (event.target.className == 'clear') {
