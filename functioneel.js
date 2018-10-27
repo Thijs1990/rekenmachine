@@ -6,7 +6,7 @@ var resOperator = []; //dit is de operator opslag
 //deze functie start als ergens geklikt wordt
 document.onclick = function(event) {
 //nummerknoppen vullen het tijdelijke getal aan en updaten het scherm ermee
-	if (event.target.className == 'number') {
+	if (event.target.className == 'number' && resOperator != "2") {
 		tmpGetal += (event.target.value);
 		scherm.innerText = tmpGetal;
 	}
@@ -18,7 +18,7 @@ document.onclick = function(event) {
 	}
 /*operator kan ik alleen gebruiken als ik een getal heb ingevoerd, er nog geen operator is en het laatste teken in tmpGetal geen decimaalpunt is.
 Dit zorgt ervoor dat ik geen 2 operators in een string kan invoeren en dat ik niet kan rekenen met een onmogelijk getal(decimaal aan het eind)*/
-	else if ((event.target.className == 'operator') && (tmpGetal.length > 0) && (resOperator.length == 0) && (tmpGetal.slice(-1) != ".")) {
+	else if (event.target.className == 'operator' && tmpGetal.length > 0 && resOperator.length == 0 && tmpGetal.slice(-1) != ".") {
 		resDecimal.push(tmpGetal); //slaat het tijdelijke getal op om straks mee te rekenen
 		tmpGetal = ""; //leegt het tijdelijke getal om de invoer van een nieuw getal mogelijk te maken
 		resOperator.push(event.target.value);
