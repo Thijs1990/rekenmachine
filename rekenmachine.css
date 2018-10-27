@@ -19,7 +19,7 @@ div.scherm {
 	color: #285020;
 	font-weight: bold;
 	font-size: 1.3em;
-	line-height: 1.5;
+	min-height: 30px;
 }
 button { width: 50px; height: 30px; box-shadow: 2px 1px 3px #50464680; border-radius: 10px; font-weight: bold;}
 button.clear, button.calculate { width: 104px; }
